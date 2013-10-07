@@ -1,0 +1,15 @@
+;; My personal emacs configuration
+;;
+
+#+begin_src emacs-lisp
+    (starter-kit-load "org")
+    
+    (starter-kit-load "ruby")
+    
+    ;; Active Babel Languages
+    (org-babel-do-load-languages 
+      'org-babel-load-languages 
+      '((ruby . t)
+      )
+    )
+#+end_src
