@@ -1,15 +1,46 @@
-;; My personal emacs configuration
-;;
+
+** Ruby
 
 #+begin_src emacs-lisp
-    (starter-kit-load "org")
-    
-    (starter-kit-load "ruby")
-    
-    ;; Active Babel Languages
-    (org-babel-do-load-languages 
-      'org-babel-load-languages 
-      '((ruby . t)
-      )
-    )
+ (starter-kit-load "ruby")
 #+end_src
+   
+
+** Org-Mode Configuration
+   
+*** Enable the settings in starter-kit.org
+
+#+begin_src emacs-lisp
+ (starter-kit-load "org")
+#+end_src
+
+*** Languages used in code blocks
+
+#+begin_src emacs-lisp       
+ (org-babel-do-load-languages 
+    'org-babel-load-languages 
+    '((ruby . t))
+ )
+#+end_src
+
+*** Org-Mobile configuration
+
+****  Location of the Org files on _this_ system
+
+#+BEGIN_SRC emacs-lisp
+ (setq org-directory "~/org")
+#+END_SRC
+
+**** File where new notes will be stored
+
+#+BEGIN_SRC emacs-lisp
+ (setq org-mobile-inbox-for-pull "~/org/flagged.org")
+#+END_SRC
+     
+**** Set to <your Dropbox root directory>/Apps/MobileOrg
+
+#+BEGIN_SRC emacs-lisp
+ (setq org-mobile-directory "~/Dropbox/Apps/MobileOrg")
+#+END_SRC
+
+
