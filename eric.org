@@ -14,6 +14,16 @@
  (starter-kit-load "org")
 #+end_src
 
+*** List of agenda files 
+Tells org-mode where to search for TODO and scheduled items.
+
+#+BEGIN_SRC emacs-lisp
+  (setq org-agenda-files (list "~/org/work.org" 
+                               "~/org/home.org"
+                               "~/org/13rubies.org")
+  )
+#+END_SRC
+
 *** Languages used in code blocks
 
 #+begin_src emacs-lisp       
@@ -25,7 +35,7 @@
 
 *** Org-Mobile configuration
 
-****  Location of the Org files on _this_ system
+**** Location of your Org files on _this_ system
 
 #+BEGIN_SRC emacs-lisp
  (setq org-directory "~/org")
@@ -37,10 +47,13 @@
  (setq org-mobile-inbox-for-pull "~/org/flagged.org")
 #+END_SRC
      
-**** Set to <your Dropbox root directory>/Apps/MobileOrg
+**** Location of  org files in DropBox
+This is the path to the MobileOrg folder in your Dropbox:
+ <your Dropbox root directory>/Apps/MobileOrg
 
 #+BEGIN_SRC emacs-lisp
  (setq org-mobile-directory "~/Dropbox/Apps/MobileOrg")
 #+END_SRC
+
 
 
