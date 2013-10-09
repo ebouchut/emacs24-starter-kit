@@ -2,6 +2,24 @@
 * My Emacs Configuration
 
 ** Install additional starter-kits   
+*** Install missing packages
+
+starter-kit.lisp requires the following packages to be present on the
+filesystem, we therefore need to install them beforehand. 
+
+#+BEGIN_SRC emacs-lisp
+  ;; For whatever reason lisp stater-kit requires paredit which is not installed beforehand
+  (dolist (package '(paredit clojure-mode dired-details+))
+    (unless (package-installed-p package)
+      (package-install package)))
+#+END_SRC
+
+*** starter-kit.lisp
+
+#+BEGIN_SRC emacs-lisp
+  (starter-kit-load "lisp")
+#+END_SRC
+
 *** starter-kit.js
 [[http://eschulte.github.io/emacs24-starter-kit/starter-kit-js.html][Description]]
 
@@ -27,12 +45,6 @@
 #+begin_src emacs-lisp
  (starter-kit-load "org")
 #+end_src
-
-*** Install starter-kit.lisp
-
-#+BEGIN_SRC emacs-lisp
-  (starter-kit-load "lisp")
-#+END_SRC   
 
 *** Install starter-kit.ruby
 
@@ -127,7 +139,7 @@
   (global-set-key (kbd "<C-S-return>") 'open-line-above)
 #+END_SRC
 
-*** Command == META key (on MacOs only)
+*** Command == META key (on MacOs)
 
 #+BEGIN_SRC emacs-lisp  
   (when (eq system-type 'darwin) 
@@ -164,13 +176,6 @@
 ** Dired
 Use ')' to show hidden ls details and '(' to hide them again.
 [[ http://whattheemacsd.com/setup-dired.el-01.html][Source]]
-
-#+BEGIN_SRC emacs-lisp
-(starter-kit-load "misc-recommended)
-  (dolist (package '(dired--details dired-details-plus))
-    (unless (package-installed-p package)
-      (package-install package)))
-#+END_SRC
 
 #+BEGIN_SRC emacs-lisp
   ;; Make dired less verbose.
