@@ -8,7 +8,6 @@ starter-kit.lisp requires the following packages to be present on the
 filesystem, we therefore need to install them beforehand. 
 
 #+BEGIN_SRC emacs-lisp
-  ;; For whatever reason lisp stater-kit requires paredit which is not installed beforehand
   (dolist (package '(paredit clojure-mode dired-details+))
     (unless (package-installed-p package)
       (package-install package)))
@@ -150,6 +149,8 @@ filesystem, we therefore need to install them beforehand.
 #+END_SRC
 
 ** Colour Theme: emacs-solarized
+Use M-x load-theme <colour theme> to use a colour theme.
+
 #+BEGIN_SRC emacs-lisp
   (dolist (package '(solarized-theme))
     (unless (package-installed-p package)
@@ -264,6 +265,7 @@ Use ')' to show hidden ls details and '(' to hide them again.
 *** TODO RVM
 *** TODO Sass-Mode
 *** TODO HTML,CSS, PHP
+*** TODO Emacs-rails
 ** TODO mode-compile
 ** TODO Emacs-rails
 ** TODO L10N 
