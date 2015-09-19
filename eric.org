@@ -277,10 +277,7 @@ Use ')' to show hidden ls details and '(' to hide them again.
 Tells org-mode where to search for TODO and scheduled items.
 
 #+BEGIN_SRC emacs-lisp
-  (setq org-agenda-files (list "~/org/work.org" 
-                               "~/org/home.org"
-                               "~/org/13rubies.org")
-  )
+    (setq org-agenda-files '("~/org"))
 #+END_SRC
 
 *** Languages used in code blocks
